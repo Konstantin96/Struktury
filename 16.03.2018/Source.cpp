@@ -36,8 +36,23 @@ struct student {
 void printStudentInfo(struct student * student)
 {
 	printf("Info o studente: \n");
-	printf("--> %s %s \n", i + 1, student->fname, student->lname);
+	printf("--> %s %s \n",student->fname, student->lname);
 	printf("\n---------------------------------\n");
+}
+
+void printStudentInfo(struct student * student,int count)
+{
+	printf("Spisok postupivshih: \n");
+	printf("\n---------------------------------\n");
+	printf("Itogo: %d postupivshih\n\n\n", count);
+}
+
+void sl(int age)
+{
+	if (age > 18)
+	{
+		printf("Vy slishkom molody\n");
+	}
 }
 
 void main()
@@ -113,7 +128,8 @@ void main()
 				printf("Spisok postupivshih: \n");
 				for (int i = 0; i < 2; i++)
 				{
-					printf("--> #%d. %s %s \n", i + 1, students[i].fname, students[i].lname);
+					printStudentInfo(&students[i]);
+					/*printf("--> #%d. %s %s \n", i + 1, students[i].fname, students[i].lname);*/
 				}
 				printf("\n---------------------------------\n");
 				printf("Itogo: %d postupivshih\n\n\n", count);
